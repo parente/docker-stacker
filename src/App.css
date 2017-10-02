@@ -1,0 +1,14 @@
+.App-fullbar {
+    height: 1px;
+    width: 100%;
+    background-color: #e7e7e7;
+    margin-bottom: 20px;
+}
+
+.App-logo {
+    height: 28px;
+}
+
+.App-controls .row {
+    margin-top: 20px;
+}
