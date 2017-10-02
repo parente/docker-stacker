@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import {ReactSelectize, SimpleSelect, MultiSelect} from 'react-selectize';
 import './App.css';
+import 'react-selectize/themes/index.css';
 
 const Card = ({ columns, header, title, children }) => (
   <div className={`col-${columns}`}>
@@ -112,6 +114,19 @@ class App extends Component {
         </div>
 
         <div className="App-controls container">
+          <div className="row">
+            <div className="col-12">
+            <MultiSelect
+              placeholder="Select a fruit"
+              onValueChange={value => alert(value)}>
+              <option value = "apple">apple</option>
+              <option value = "mango">mango</option>
+              <option value = "orange">orange</option>
+              <option value = "banana">banana</option>
+            </MultiSelect>
+            </div>
+          </div>
+
           <div className="row">
             <Card
               columns="12"

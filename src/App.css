@@ -12,3 +12,20 @@
 .App-controls .row {
     margin-top: 20px;
 }
+
+.App .dropdown-menu {
+    top: initial;
+    left: initial;
+    display: initial;
+    float: initial;
+    padding: initial;
+    margin: initial;
+    font-size: initial;
+    border-radius: initial;
+    box-shadow: initial;
+  }
+
+.App .react-selectize-control input,
+.App .react-selectize-control .value-wrapper span {
+    line-height: initial;
+}
