@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import VirtualizedSelect from 'react-virtualized-select'
-import julia from './julia';
+
+import julia from './datasets/julia';
+import python from './datasets/python';
+import r from './datasets/r';
+import scala from './datasets/scala';
 
 import './App.css';
 import 'react-select/dist/react-select.css'
@@ -19,7 +23,7 @@ const Card = ({ columns, header, title, children }) => (
   </div>
 );
 
-const PDFSupport = ({enablePdf, onChange}) => {
+const PDFSupport = ({ enablePdf, onChange }) => {
   return (
     <div className="card-text">
       <label className="form-check-label">
@@ -81,7 +85,7 @@ const PackageSupport = (props) => (
       clearable={true}
       options={props.options}
       onChange={(item) => {
-        props.onChange({target: {name: props.name, value: item}})
+        props.onChange({ target: { name: props.name, value: item } })
       }}
       value={props.selected}
     />
@@ -106,9 +110,7 @@ const SparkSupport = ({ enableSpark, handleInputChange }) => {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      availableJuliaPackages: julia.packages
-    };
+    this.state = {};
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -151,8 +153,9 @@ class App extends Component {
               title="Python Environment">
               <PackageSupport
                 description="Install Python packages from https://conda-forge.github.io/feedstocks. The IPython kernel is always installed for you."
-                name="python"
-                options={this.state.pythonPackages}
+                name="pythonPackages"
+                selected={this.state.pythonPackages}
+                options={python.packages}
                 onChange={this.handleInputChange} />
             </Card>
 
@@ -161,8 +164,9 @@ class App extends Component {
               title="R Environment">
               <PackageSupport
                 description="Install R packages from https://conda-forge.github.io/feedstocks. The IRKernel package will be installed for you if you choose at least one other package."
-                name="r"
-                options={this.state.rPackages}
+                name="rPackages"
+                selected={this.state.rPackages}
+                options={r.packages}
                 onChange={this.handleInputChange} />
             </Card>
           </div>
@@ -175,7 +179,7 @@ class App extends Component {
                 description="Install Julia packages from https://pkg.julialang.org/. The IJulia package will be installed for you if you choose at least one other package."
                 name="juliaPackages"
                 selected={this.state.juliaPackages}
-                options={this.state.availableJuliaPackages}
+                options={julia.packages}
                 onChange={this.handleInputChange} />
             </Card>
 
@@ -184,8 +188,9 @@ class App extends Component {
               title="Scala Environment">
               <PackageSupport
                 description="Install Scala kernels. Apache Spark will be installed for you if you choose at least one kernel."
-                name="scala"
-                packages={this.state.scalaPackages}
+                name="scalaPackages"
+                selected={this.state.scalaPackages}
+                options={scala.packages}
                 onChange={this.handleInputChange} />
             </Card>
           </div>
@@ -201,7 +206,7 @@ class App extends Component {
 
             <Card
               header="Jupyter Notebook"
-              title="LaTeX and PDF Conversion">
+              title="LaTeX &amp; PDF Support">
               <PDFSupport
                 enablePdf={this.state.enablePdf}
                 onChange={this.handleInputChange} />
