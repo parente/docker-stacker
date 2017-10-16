@@ -17,7 +17,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleGenerate = this.handleGenerate.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleGenerate(event) {
+    console.log('TODO');
   }
 
   handleInputChange(event) {
@@ -35,10 +40,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header sticky-top container">
-          <nav className="navbar navbar-expand-lg navbar-light">
+          <nav className="navbar navbar-expand-lg navbar-light justify-content-between">
             <a className="navbar-brand" href="#">
-              <img className="App-logo" src="https://cdn.jupyter.org/notebook/5.0.0/base/images/logo.png" alt="Jupyter" />
+              <img className="App-logo" src="https://cdn.jupyter.org/notebook/5.2.0/base/images/logo.png" alt="Jupyter logo" />
             </a>
+            <button className="btn btn-sm btn-outline-jupyter" onClick={this.handleGenerate}>Generate</button>
           </nav>
         </div>
 
@@ -46,7 +52,7 @@ class App extends Component {
           <div className="jumbotron">
             <div className="col-sm-10 mx-auto">
               <h1>Jupyter Docker Stacker</h1>
-              <p>Construct your own Jupyter Dockerfile</p>
+              <p>Build your own Jupyter Dockerfile</p>
             </div>
           </div>
         </div>
@@ -126,6 +132,10 @@ class App extends Component {
                 enableVim={this.state.enableVim}
                 onChange={this.handleInputChange} />
             </Card>
+          </div>
+
+          <div class="row">
+            <button className="btn btn-block btn-outline-jupyter" onClick={this.handleGenerate}>Generate</button>
           </div>
         </div>
       </div>
