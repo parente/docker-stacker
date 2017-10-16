@@ -7,8 +7,7 @@ import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 
 const PackageSupport = (props) => (
-  <div className="card-text">
-    <p>{props.description}</p>
+  <div>
     <VirtualizedSelect
       name={props.name}
       placeholder="Select packages"
@@ -25,7 +24,6 @@ const PackageSupport = (props) => (
 );
 
 PackageSupport.propTypes = {
-  description: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,

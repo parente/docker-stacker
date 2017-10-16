@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SparkSupport = ({ enableSpark, onChange }) => {
   return (
-    <div className="card-text">
+    <div>
       <label className="form-check-label">
         <input className="form-check-input"
           type="checkbox"

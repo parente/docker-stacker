@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 const Card = ({ header, title, children }) => (
   <div className="card">
-    <div className="card-header text-muted">
+    <div className="card-header">
       {header}
     </div>
     <div className="card-body">
       <h4 className="card-title">{title}</h4>
-      {children}
+      <div className="card-text">
+        {children}
+      </div>
     </div>
   </div>
 );
@@ -16,7 +18,7 @@ const Card = ({ header, title, children }) => (
 Card.propTypes = {
   header: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  children: PropTypes.object
+  children: PropTypes.any
 }
 
 export default Card;

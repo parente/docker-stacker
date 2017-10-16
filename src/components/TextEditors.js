@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextEditors = (props) => (
-  <div className="card-text">
+  <div>
     <p>Install text editors for use in the terminal</p>
     <div className="form-check">
       <label className="form-check-label">

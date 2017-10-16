@@ -62,8 +62,8 @@ class App extends Component {
             <Card
               header="Libraries"
               title="Python Environment">
+              <p>Install Python packages from <a href="https://conda-forge.github.io/feedstocks" target="_blank">https://conda-forge.github.io/feedstocks</a>. The IPython kernel is always installed for you.</p>
               <PackageSupport
-                description="Install Python packages from https://conda-forge.github.io/feedstocks. The IPython kernel is always installed for you."
                 name="pythonPackages"
                 selected={this.state.pythonPackages}
                 options={python.packages}
@@ -73,8 +73,8 @@ class App extends Component {
             <Card
               header="Libraries"
               title="R Environment">
+              <p>Install R packages from <a href="https://conda-forge.github.io/feedstocks" target="_blank">https://conda-forge.github.io/feedstocks</a>. The IRKernel package will be installed for you if you choose at least one other package.</p>
               <PackageSupport
-                description="Install R packages from https://conda-forge.github.io/feedstocks. The IRKernel package will be installed for you if you choose at least one other package."
                 name="rPackages"
                 selected={this.state.rPackages}
                 options={r.packages}
@@ -86,8 +86,8 @@ class App extends Component {
             <Card
               header="Libraries"
               title="Julia Environment">
+              <p>Install Julia packages from <a href="https://pkg.julialang.org/" target="_blank">https://pkg.julialang.org/</a>. The IJulia package will be installed for you if you choose at least one other package.</p>
               <PackageSupport
-                description="Install Julia packages from https://pkg.julialang.org/. The IJulia package will be installed for you if you choose at least one other package."
                 name="juliaPackages"
                 selected={this.state.juliaPackages}
                 options={julia.packages}
@@ -97,8 +97,8 @@ class App extends Component {
             <Card
               header="Libraries"
               title="Scala Environment">
+              <p>Install Scala kernels. Apache Spark will be installed for you if you choose at least one kernel.</p>
               <PackageSupport
-                description="Install Scala kernels. Apache Spark will be installed for you if you choose at least one kernel."
                 name="scalaPackages"
                 selected={this.state.scalaPackages}
                 options={scala.packages}
