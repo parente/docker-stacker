@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import VirtualizedSelect from 'react-virtualized-select'
+
+import Card from './components/Card';
+import PackageSupport from './components/PackageSupport';
+import PDFSupport from './components/PDFSupport';
+import SparkSupport from './components/SparkSupport';
+import TextEditors from './components/TextEditors';
 
 import julia from './datasets/julia';
 import python from './datasets/python';
@@ -7,105 +12,6 @@ import r from './datasets/r';
 import scala from './datasets/scala';
 
 import './App.css';
-import 'react-select/dist/react-select.css'
-import 'react-virtualized/styles.css'
-import 'react-virtualized-select/styles.css'
-
-const Card = ({ columns, header, title, children }) => (
-  <div className="card">
-    <div className="card-header text-muted">
-      {header}
-    </div>
-    <div className="card-body">
-      <h4 className="card-title">{title}</h4>
-      {children}
-    </div>
-  </div>
-);
-
-const PDFSupport = ({ enablePdf, onChange }) => {
-  return (
-    <div className="card-text">
-      <label className="form-check-label">
-        <input className="form-check-input"
-          type="checkbox"
-          name="enablePdf"
-          checked={enablePdf}
-          onChange={onChange} />
-        <span>Install Pandoc and texlive to support conversion of notebooks to LaTeX and PDF files</span>
-      </label>
-    </div>
-  );
-}
-
-const TextEditors = (props) => (
-  <div className="card-text">
-    <p>Install text editors for use in the terminal</p>
-    <div className="form-check">
-      <label className="form-check-label">
-        <input className="form-check-input"
-          type="checkbox"
-          name="enableEmacs"
-          checked={props.enableEmacs}
-          onChange={props.onChange} />
-        <span>Emacs</span>
-      </label>
-    </div>
-    <div className="form-check">
-      <label className="form-check-label">
-        <input className="form-check-input"
-          type="checkbox"
-          name="enableJed"
-          checked={props.enableJed}
-          onChange={props.onChange} />
-        <span>JED</span>
-      </label>
-    </div>
-    <div className="form-check">
-      <label className="form-check-label">
-        <input className="form-check-input"
-          type="checkbox"
-          name="enableVim"
-          checked={props.enableVim}
-          onChange={props.onChange} />
-        <span>Vim</span>
-      </label>
-    </div>
-  </div>
-);
-
-const PackageSupport = (props) => (
-  <div className="card-text">
-    <p>{props.description}</p>
-    <VirtualizedSelect
-      name={props.name}
-      placeholder="Select packages"
-      multi={true}
-      searchable={true}
-      clearable={true}
-      options={props.options}
-      onChange={(item) => {
-        props.onChange({ target: { name: props.name, value: item } })
-      }}
-      value={props.selected}
-    />
-  </div>
-);
-
-const SparkSupport = ({ enableSpark, handleInputChange }) => {
-  return (
-    <div className="card-text">
-      <label className="form-check-label">
-        <input className="form-check-input"
-          type="checkbox"
-          name="enableSpark"
-          checked={enableSpark}
-          onChange={handleInputChange} />
-        <span>Install Apache Spark 2.2.0 for Hadoop 2.7 or higher</span>
-      </label>
-    </div>
-  );
-}
 
 class App extends Component {
   constructor(props) {
@@ -115,7 +21,6 @@ class App extends Component {
   }
 
   handleInputChange(event) {
-    console.log(event);
     const target = event.target;
     const name = target.name;
     const value = target.type === 'checkbox' ? target.checked : target.value;
