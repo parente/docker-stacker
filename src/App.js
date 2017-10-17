@@ -134,7 +134,7 @@ class App extends Component {
             </Card>
           </div>
 
-          <div class="row">
+          <div className="row">
             <button className="btn btn-block btn-outline-jupyter" onClick={this.handleGenerate}>Generate</button>
           </div>
         </div>
