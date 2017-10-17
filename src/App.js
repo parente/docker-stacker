@@ -52,7 +52,7 @@ class App extends Component {
           <div className="jumbotron">
             <div className="col-sm-10 mx-auto">
               <h1>Jupyter Docker Stacker</h1>
-              <p>Build your own Jupyter Dockerfile</p>
+              <p>Build your own Jupyter Dockerfile (EXPERIMENTAL)</p>
             </div>
           </div>
         </div>
