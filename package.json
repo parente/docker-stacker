@@ -1,6 +1,7 @@
 {
   "name": "docker-stacker",
   "version": "0.1.0",
+  "homepage": "http://parente.github.io/docker-stacker",
   "private": true,
   "dependencies": {
     "react": "^16.0.0",
