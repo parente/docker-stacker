@@ -1,5 +1,5 @@
 {
-  "name": "docker-crane",
+  "name": "docker-stacker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
