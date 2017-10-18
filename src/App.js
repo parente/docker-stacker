@@ -62,7 +62,7 @@ class App extends Component {
             <Card
               header="Libraries"
               title="Python Environment">
-              <p>Install Python packages from <a href="https://conda-forge.github.io/feedstocks"  rel="noopener noreferrer" target="_blank">https://conda-forge.github.io/feedstocks</a>. The IPython kernel is always installed for you.</p>
+              <p>Install Python packages from <a href="https://conda-forge.org/feedstocks"  rel="noopener noreferrer" target="_blank">https://conda-forge.org/feedstocks</a>. The IPython kernel is always installed for you.</p>
               <PackageSupport
                 name="pythonPackages"
                 selected={this.state.pythonPackages}
@@ -73,7 +73,7 @@ class App extends Component {
             <Card
               header="Libraries"
               title="R Environment">
-              <p>Install R packages from <a href="https://conda-forge.github.io/feedstocks" rel="noopener noreferrer" target="_blank">https://conda-forge.github.io/feedstocks</a>. The IRKernel package will be installed for you if you choose at least one other package.</p>
+              <p>Install R packages from <a href="https://conda-forge.org/feedstocks" rel="noopener noreferrer" target="_blank">https://conda-forge.org/feedstocks</a>. The IRKernel package will be installed for you if you choose at least one other package.</p>
               <PackageSupport
                 name="rPackages"
                 selected={this.state.rPackages}
